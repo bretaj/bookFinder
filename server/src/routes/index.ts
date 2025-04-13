@@ -1,3 +1,4 @@
+// TODO: Export typeDefs and resolvers
 import type { Request, Response } from 'express';
 import express from 'express';
 const router = express.Router();

@@ -3,9 +3,9 @@ import { signToken } from '../services/auth.js';
 
 const resolvers = {
     Query: {
-        getSingleUser: async (_parent: any, args: any, context: any) => {
+        me: async (_parent: any, _args: any, context: any) => {
             const foundUser = await User.findOne({
-                $or: [{ _id: context.user ? context.user._id : args.id }, { username: args.username }],
+                _id: context.user._id
             });
 
             if (!foundUser) {

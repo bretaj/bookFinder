@@ -39,7 +39,7 @@ mutation Login($email: String, $password: String) {
   }
 }
 `
-
+// not sure these mutations are correct???
 export const SAVE_BOOK = gql`
 mutation SaveBook($authors: [String], $description: String, $bookId: String, $image: String, $link: String, $title: String) {
   saveBook(authors: $authors, description: $description, bookId: $bookId, image: $image, link: $link, title: $title) {

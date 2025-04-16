@@ -6,7 +6,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import Auth from '../utils/auth';
 import type { User } from '../models/User';
 import { useMutation } from '@apollo/client';
-// import { LOGIN_USER } from '../utils/mutations';
+import { LOGIN_USER } from '../utils/mutations';
 
 // biome-ignore lint/correctness/noEmptyPattern: <explanation>
 const LoginForm = ({}: { handleModalClose: () => void }) => {
@@ -46,8 +46,8 @@ const LoginForm = ({}: { handleModalClose: () => void }) => {
       
       const response = await loginUser({
         variables:{
-          "email": "test4@mail.com",
-          "password": "password"
+          "email": userFormData.email,
+          "password": userFormData.password
         }
       })
 
@@ -55,7 +55,7 @@ const LoginForm = ({}: { handleModalClose: () => void }) => {
         throw new Error('something went wrong!');
       }
 
-      const token = response.data.createUser.token;
+      const token = response.data.login.token;
 
       Auth.login(token);
     } catch (err) {

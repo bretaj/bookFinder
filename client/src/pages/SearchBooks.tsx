@@ -16,9 +16,12 @@ import type { Book } from '../models/Book';
 import type { GoogleAPIBook } from '../models/GoogleAPIBook';
 import { useMutation } from '@apollo/client';
 import { SAVE_BOOK } from '../utils/mutations';
+import { GET_ME } from '../utils/queries';
 
 const SearchBooks = () => {
-  const [saveBook] = useMutation(SAVE_BOOK)
+  const [saveBook] = useMutation(SAVE_BOOK, {
+    refetchQueries: [ GET_ME ]
+  })
   // create state for holding returned google api data
   const [searchedBooks, setSearchedBooks] = useState<Book[]>([]);
   // create state for holding our search field data

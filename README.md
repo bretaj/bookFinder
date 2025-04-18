@@ -4,7 +4,7 @@ This application utilizes MongoDB,
 
 [deployed app](https://bookfinder-6gi9.onrender.com/)
 
-![screenshot of app](reactjwtscreenshot1.png)
+![screenshot of app](Screenshot%202025-04-17%20215005.png)
 
 ## Table of Contents
 - [Installation](#installation)
@@ -14,6 +14,7 @@ This application utilizes MongoDB,
 - [Questions](#questions)
 
 ## Installation
+npm run develop
 
 ## Usage
 
